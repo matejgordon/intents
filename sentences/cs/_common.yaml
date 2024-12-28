@@ -351,6 +351,29 @@ lists:
   zone:
     wildcard: true
 
+  timer_seconds:
+    range:
+      from: 1
+      to: 100
+  timer_minutes:
+    range:
+      from: 1
+      to: 100
+  timer_hours:
+    range:
+      from: 1
+      to: 100
+  timer_half:
+    values:
+      - in: "půl"
+        out: 30
+      - in: "1/2"
+        out: 30
+  timer_name:
+    wildcard: true
+  timer_command:
+    wildcard: true
+
 expansion_rules:
   v: "(v|ve|na)"
   area: "[<v>] {area}"
@@ -392,6 +415,28 @@ expansion_rules:
        <jaky_je> (<class>;[<je_jsou>];[[(na|z)]měřen<y_e>]) ([(na|na sen(z|s)oru|sen(z|s)orem) ]{name};[<area>])
        |<jaky_je> <area> <class> [(na|z)měřen(á|ý) ][(na sen(z|s)oru|sen(z|s)orem) ]{name}
      )
+
+  # Timers
+  timer_duration_seconds: "{timer_seconds:seconds} sekund[a|y|u]"
+  timer_duration_minutes: "({timer_minutes:minutes} minut[a|y|u][ [a |a také ]{timer_seconds:seconds} sekund[a|y|u]])|({timer_minutes:minutes} a {timer_half:seconds} minut[a|y|u])|({timer_half:seconds} minut[a|y|u])"
+  timer_duration_hours: "({timer_hours:hours} hodin[a|y|u][ [a |a také ]{timer_minutes:minutes} minut[a|y|u]][ [a |a také ]{timer_seconds:seconds} sekund[a|y|u]])|({timer_hours:hours} a {timer_half:minutes} hodin[a|y|u])|({timer_half:minutes} hodin[a|y|u])"
+  timer_duration: "<timer_duration_seconds>|<timer_duration_minutes>|<timer_duration_hours>"
+
+  timer_start_seconds: "{timer_seconds:start_seconds} sekund[a|y|u]"
+  timer_start_minutes: "{timer_minutes:start_minutes} minut[a|y|u][ [a |a také ]{timer_seconds:start_seconds} sekund[a|y|u]]"
+  timer_start_hours: "{timer_hours:start_hours} hodin[a|y|u|ový|ovou][ [a |a také ]{timer_minutes:start_minutes} minut[a|y|u]][ [a |a také ]{timer_seconds:start_seconds} sekund[a|y|u]]"
+  timer_start: "<timer_start_seconds>|<timer_start_minutes>|<timer_start_hours>"
+
+  timer: "(minutk[u|a]|časovač|timer|počítadl[o])"
+  timer_plural: "(minutk[y]|časovač[e]|timer[y]|počítadl[a])"
+  timer_set: "(vytvoř|nastav|spusť|začni|aktivuj|zapni)"
+  timer_stop: "(pauzni|přeruš|pozastav|zastav|stopni)"
+  timer_resume: "(obnov|pokračuj|znovu spusť|reaktivuj)"
+  timer_remove: "(odeber|zruš|odstraň|zkrát[i|it]|zmenši|redukuj)"
+  timer_named: "(jménem|pojmenovaný|nazvaný|s názvem|a pojmenuj ho|názvem|pojmenovanou)"
+  timer_add: "(přidej|rozšiř|zvětš[i|it]|prodlouž|doplň)"
+  timer_cancel: "(zruš|anuluj|přeruš|ukonči|vypni)"
+  timer_state: "(stav|status|souhrn|podrobnosti)"
 
 skip_words:
   - "prosím"

@@ -1,0 +1,16 @@
+---
+language: "cs"
+intents:
+  HassPauseTimer:
+    data:
+      - sentences:
+          - "<timer_stop> [<timer>|[můj|moji] <timer>]"
+          - "<timer_stop> [<timer>|[můj|moji] <timer>] <timer_start>"
+          - "<timer_stop> <timer_start> <timer>"
+          - "<timer_stop> [<timer>|[můj|moji] <timer>] na <timer_start>"
+          - "<timer_stop> [<timer>|[můj|moji] <timer>] v {area}"
+          - "<timer_stop> [<timer>|[můj|moji] <timer>] <timer_named> {timer_name:name}"
+          - "<timer_stop> [<timer>|[můj|moji] <timer>] <timer_named> {timer_name:name}"
+          - "v {area} <timer_stop> [<timer>|[můj|moji] <timer>] <timer_named> {timer_name:name}"
+          - "v {area} <timer_stop> [<timer>|[můj|moji] <timer>]"
+          - "<timer_stop> v {area} [<timer>|[můj|moji] <timer>]"

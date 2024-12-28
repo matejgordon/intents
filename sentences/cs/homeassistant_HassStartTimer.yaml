@@ -1,0 +1,17 @@
+---
+language: "cs"
+intents:
+  HassStartTimer:
+    data:
+      - sentences:
+          - "<timer_set> <timer> na <timer_duration>"
+          - "<timer_set> <timer> na <timer_duration> <timer_named> {timer_name:name}"
+          - "<timer_set> <timer> s (jménem|názvem) {timer_name:name} na <timer_duration>"
+          - "<timer> na <timer_duration>"
+          - "<timer> na <timer_duration>"
+          - "<timer> na <timer_duration> <timer_named> {timer_name:name}"
+          - "<timer_set> <timer> na dobu <timer_duration>"
+      - sentences:
+          - "{timer_command:conversation_command} za <timer_duration>"
+          - "za <timer_duration> {timer_command:conversation_command}"
+        response: command

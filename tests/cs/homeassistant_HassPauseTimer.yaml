@@ -1,0 +1,43 @@
+language: cs
+tests:
+  - sentences:
+      - "zastav minutku"
+      - "stopni minutku"
+      - "pozastav minutku"
+      - "zastav moji minutku"
+      - "stopni moji minutku"
+      - "pozastav moji minutku"
+    intent:
+      name: HassPauseTimer
+    response: Časovač pozastaven
+
+  - sentences:
+      - "pozastav 1 hodinovou minutku"
+      - "pozastav 1 hodinový časovač"
+      - "pozastav 1 hodinový timer"
+    intent:
+      name: HassPauseTimer
+      slots:
+        start_hours: 1
+    response: Časovač pozastaven
+
+  - sentences:
+      - "pozastav minutku s názvem pizza"
+      - "zastav minutku pojmenovanou pizza"
+    intent:
+      name: HassPauseTimer
+      slots:
+        name:
+          - "pizza"
+    response: Časovač pozastaven
+
+  - sentences:
+      - "pozastav minutku v kuchyni"
+      - "v kuchyni zastav minutku"
+      - "pozastav v kuchyni minutku"
+    intent:
+      name: HassPauseTimer
+      slots:
+        area:
+          - Kuchyni
+    response: Časovač pozastaven

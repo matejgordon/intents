@@ -1,0 +1,187 @@
+language: cs
+tests:
+  - sentences:
+      - "nastav časovač na 10 minut"
+    intent:
+      name: HassStartTimer
+      slots:
+        minutes: 10
+    response: Časovač nastaven na 10 minut
+
+  - sentences:
+      - "spusť časovač na 1 hodinu"
+      - "nastav časovač na 1 hodinu"
+      - "vytvoř časovač na 1 hodinu"
+      - "časovač na 1 hodinu"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        hours: 1
+    response: Časovač nastaven na 1 hodinu
+
+  - sentences:
+      - "nastav časovač na 5 a půl minuty"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+        seconds: 30
+    response: Časovač nastaven na 5 minut a 30 sekund
+
+  - sentences:
+      - "nastav časovač na půl minuty"
+      - "nastav časovač na 1/2 minuty"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        seconds: 30
+    response: Časovač nastaven na 30 sekund
+
+  - sentences:
+      - "nastav časovač na půl hodiny"
+      - "nastav časovač na 1/2 hodiny"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 30
+    response: Časovač nastaven na 30 minut
+
+  - sentences:
+      - "spusť časovač na 1 hodinu a 15 minut"
+      - "časovač na 1 hodinu a 15 minut"
+      - "nastav časovač na 1 hodinu a 15 minut"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        hours: 1
+        minutes: 15
+    response: Časovač nastaven na 1 hodinu a 15 minut
+
+  - sentences:
+      - "spusť časovač na 1 hodinu a 30 sekund"
+      - "časovač na 1 hodinu a 30 sekund"
+      - "nastav časovač na 1 hodinu a 30 sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        hours: 1
+        seconds: 30
+    response: Časovač nastaven na 1 hodinu a 30 sekund
+
+  - sentences:
+      - "spusť časovač na 1 hodinu, 15 minut a 30 sekund"
+      - "časovač na 1 hodinu 15 minut 30 sekund"
+      - "nastav časovač na 1 hodinu, 15 minut a 30 sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        hours: 1
+        minutes: 15
+        seconds: 30
+    response: Časovač nastaven na 1 hodinu, 15 minut a 30 sekund
+
+  - sentences:
+      - "spusť časovač na 5 minut"
+      - "časovač na 5 minut"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+    response: Časovač nastaven na 5 minut
+
+  - sentences:
+      - "časovač na pět minut"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+    response: Časovač nastaven na pět minut
+
+  - sentences:
+      - "spusť časovač na 5 minut a pojmenuj ho pizza"
+      - "nastav časovač na 5 minut s názvem pizza"
+      - "časovač na 5 minut pojmenovaný pizza"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+        name:
+          - "pizza "
+          - "pizza"
+    response: Časovač nastaven na 5 minut s názvem pizza
+
+  - sentences:
+      - "spusť časovač na 5 minut a 10 sekund"
+      - "časovač na 5 minut a 10 sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+        seconds: 10
+    response: Časovač nastaven na 5 minut a 10 sekund
+
+  - sentences:
+      - "časovač na pět minut a deset sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        minutes: 5
+        seconds: 10
+    response: Časovač nastaven na pět minut a deset sekund
+
+  - sentences:
+      - "spusť časovač na 45 sekund"
+      - "časovač na 45 sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        seconds: 45
+    response: Časovač nastaven na 45 sekund
+
+  - sentences:
+      - "časovač na čtyřicet pět sekund"
+    intent:
+      name: HassStartTimer
+      context:
+        area: Obývací pokoj
+      slots:
+        seconds: 45
+    response: Časovač nastaven na čtyřicet pět sekund
+
+  - sentences:
+      - "otevři garážová vrata za 5 minut"
+      - "za 5 minut otevři garážová vrata"
+    intent:
+      name: HassStartTimer
+      slots:
+        minutes: 5
+        conversation_command:
+          - "otevři garážová vrata"
+          - "otevři garážová vrata "
+    response: Příkaz bude vykonán za 5 minut
