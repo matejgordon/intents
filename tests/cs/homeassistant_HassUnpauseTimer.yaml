@@ -1,0 +1,36 @@
+---
+language: cs
+tests:
+  - sentences:
+      - "obnov časovač"
+      - "pokračuj v mém časovači"
+    intent:
+      name: HassUnpauseTimer
+    response: Časovač obnoven
+
+  - sentences:
+      - "obnov časovač na 1 hodinu"
+      - "pokračuj v časovači na 1 hodinu"
+    intent:
+      name: HassUnpauseTimer
+      slots:
+        start_hours: 1
+    response: Časovač obnoven
+
+  - sentences:
+      - "obnov časovač s názvem pizza"
+    intent:
+      name: HassUnpauseTimer
+      slots:
+        name:
+          - "pizza "
+          - "pizza"
+    response: Časovač obnoven
+
+  - sentences:
+      - "pokračuj v časovači v kuchyni"
+    intent:
+      name: HassUnpauseTimer
+      slots:
+        area: Kuchyni
+    response: Časovač obnoven

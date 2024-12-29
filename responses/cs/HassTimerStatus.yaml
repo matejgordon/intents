@@ -1,0 +1,72 @@
+language: cs
+responses:
+  intents:
+    HassTimerStatus:
+      default: |
+        {% set num_timers = slots.timers | default([]) | length %}
+        {% set active_timers = slots.timers | selectattr('is_active', 'equalto', true) | list %}
+        {% set num_active_timers = active_timers | length %}
+        {% set paused_timers = slots.timers | selectattr('is_active', 'equalto', false) | list %}
+        {% set num_paused_timers = paused_timers | length %}
+        {% set next_timer = None %}
+
+        {# ------------------ HELPER MACROS FOR TIME LABELS ------------------ #}
+        {% macro minutes_label(m) %}
+          {% if m == 1 %}1 minuta
+          {% elif m in [2, 3, 4] %}{{ m }} minuty
+          {% elif m > 4 %}{{ m }} minut
+          {% else %}{{ m }} minut
+          {% endif %}
+        {% endmacro %}
+
+        {% macro seconds_label(s) %}
+          {% if s == 1 %}1 sekunda
+          {% elif s in [2, 3, 4] %}{{ s }} sekundy
+          {% else %}{{ s }} sekund
+          {% endif %}
+        {% endmacro %}
+
+        {% macro hours_label(h) %}
+          {% if h == 1 %}1 hodina
+          {% elif h in [2, 3, 4] %}{{ h }} hodiny
+          {% else %}{{ h }} hodin
+          {% endif %}
+        {% endmacro %}
+
+
+
+        {# ------------------ CASE 1: No timers ------------------ #}
+        {% if num_timers == 0 %}
+          Žádné časovače.
+
+        {# ------------------ CASE 2: Paused timers only ------------------ #}
+        {% elif num_active_timers == 0 %}
+          {% if num_paused_timers == 1 %}
+            {% set next_timer = paused_timers[0] %}
+            Časovač je pozastaven.
+            {{ minutes_label(next_timer.rounded_minutes_left) if next_timer.rounded_minutes_left > 0 else '' }}
+            {{ seconds_label(next_timer.rounded_seconds_left) if next_timer.rounded_seconds_left > 0 else '' }} zbývá.
+          {% else %}
+            {{ num_paused_timers }} pozastavených časovačů.
+          {% endif %}
+
+        {# ------------------ CASE 3: Active timers ------------------ #}
+        {% else %}
+          {% if num_active_timers == 1 %}
+            {% set next_timer = active_timers[0] %}
+          {% else %}
+            {% set sorted_timers = active_timers | sort(attribute='total_seconds_left') %}
+            {% set next_timer = sorted_timers[0] %}
+            {{ num_active_timers }} běžící časovače.
+          {% endif %}
+
+          {% if num_paused_timers == 1 %}
+            1 pozastavený časovač.
+          {% elif num_paused_timers > 1 %}
+            {{ num_paused_timers }} pozastavených časovačů.
+          {% endif %}
+
+          {{ minutes_label(next_timer.rounded_minutes_left) if next_timer.rounded_minutes_left > 0 else '' }}
+          {{ seconds_label(next_timer.rounded_seconds_left) if next_timer.rounded_seconds_left > 0 else '' }}
+          {% if next_timer.rounded_minutes_left > 4 %}zbývá{% else %}zbývají{% endif %} na {{ next_timer.start_minutes }}minutovém časovači v {{ next_timer.area or next_timer.name }}.
+        {% endif %}

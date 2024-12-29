@@ -1,0 +1,58 @@
+---
+language: "cs"
+intents:
+  HassTimerStatus:
+    data:
+      # Stav časovače
+      - sentences:
+          - "stav <timer>"
+          - "stav <timer> v {area}"
+          - "stav <timer> {timer_name:name}"
+          - "stav mých <timer>"
+        required_keywords:
+          - "<timer>"
+          - "<timer>"
+          - "stav"
+      # Kolik času...
+      - sentences:
+          - "[kolik času] zbývá na [<timer>|[mém|mých] <timer>]"
+          - "[kolik času zbývá] na časovači {timer_name:name}"
+          - "[kolik zbývá času] na [<timer>|[mém|mých] <timer>]"
+          - "[kolik času] zbývá na [<timer>|[mém|mých] <timer>] na <timer_start>"
+          - "[kolik času] zbývá na [<timer>|[mém|mých] <timer>] v {area}"
+          - "[kolik času] zbývá na [<timer>|[mém|mých] <timer>] v oblasti <area>"
+        required_keywords:
+          - "časovač"
+          - "časovače"
+          - "zbývá"
+      # Jak dlouho...
+      - sentences:
+          - "jak dlouho zbývá na [<timer>|[mém|mých] <timer>]"
+          - "jak dlouho zbývá na [<timer>|[mém|mých] <timer>] na <timer_start>"
+          - "jak dlouho zbývá na časovači s názvem {timer_name:name}"
+          - "jak dlouho zbývá na [<timer>|[mém|mých] <timer>] v {area}"
+          - "jak dlouho zbývá na [<timer>|[mém|mých] <timer>] v oblasti <area>"
+        required_keywords:
+          - "časovač"
+          - "časovače"
+          - "zbývá"
+      # Stav...
+      - sentences:
+          - "stav [<timer>|mého <timer>]"
+          - "stav [<timer>|mého <timer>] na <timer_start>"
+          - "stav [<timer>|mého <timer>] <timer_start>"
+          - "stav [<timer>|mého <timer>] v {area}"
+          - "stav [<timer>|mého <timer>] v oblasti <area>"
+        required_keywords:
+          - "časovač"
+          - "časovače"
+      # Pojmenované časovače
+      - sentences:
+          - "stav časovače s názvem {timer_name:name}"
+          - "stav časovače s názvem {timer_name:name}"
+          - "[kolik času] zbývá na časovači s názvem {timer_name:name}"
+          - "stav [<timer>|mého <timer>] s názvem {timer_name:name}"
+          - "jak dlouho zbývá na časovači s názvem {timer_name:name}"
+        required_keywords:
+          - "časovač"
+          - "časovače"

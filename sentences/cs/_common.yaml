@@ -427,7 +427,7 @@ expansion_rules:
   timer_start_hours: "{timer_hours:start_hours} hodin[a|y|u|ový|ovou][ [a |a také ]{timer_minutes:start_minutes} minut[a|y|u]][ [a |a také ]{timer_seconds:start_seconds} sekund[a|y|u]]"
   timer_start: "<timer_start_seconds>|<timer_start_minutes>|<timer_start_hours>"
 
-  timer: "(minutk[u|a]|časovač|timer|počítadl[o])"
+  timer: "(minutk[u|a]|časovač[e|i|ů|ích]|timer[u]|počítadl[o])"
   timer_plural: "(minutk[y]|časovač[e]|timer[y]|počítadl[a])"
   timer_set: "(vytvoř|nastav|spusť|začni|aktivuj|zapni)"
   timer_stop: "(pauzni|přeruš|pozastav|zastav|stopni)"

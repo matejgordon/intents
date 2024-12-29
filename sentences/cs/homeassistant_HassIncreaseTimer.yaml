@@ -1,0 +1,22 @@
+---
+language: "cs"
+intents:
+  HassIncreaseTimer:
+    data:
+      - sentences:
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači]"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] na <timer_start>"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] pro <timer_start>"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] v {area}"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] v oblasti <area>"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] s názvem {timer_name:name}"
+          - "přidej <timer_duration> k [časovači|minutkám|mému časovači] pojmenovanému {timer_name:name}"
+      - sentences:
+          - "zvyš [časovač|minutky|můj časovač] o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] na <timer_start> o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] pro <timer_start> o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] {timer_name:name} o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] v {area} o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] v oblasti <area> o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] s názvem {timer_name:name} o <timer_duration>"
+          - "zvyš [časovač|minutky|můj časovač] pojmenovaný {timer_name:name} o <timer_duration>"

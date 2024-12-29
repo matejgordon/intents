@@ -1,0 +1,36 @@
+---
+language: "cs"
+intents:
+  HassDecreaseTimer:
+    data:
+      # Odeber...
+      - sentences:
+          - "odeber <timer_duration> z [<timer>|mého <timer>] s názvem {timer_name:name} v <area>"
+          - "odeber <timer_duration> z [<timer>|mého <timer>]"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] na <timer_start>"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] pro <timer_start>"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] v {area}"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] v oblasti <area>"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] s názvem {timer_name:name}"
+          - "odeber <timer_duration> z [<timer>|mého <timer>] pojmenovaného {timer_name:name}"
+      # Vezmi...
+      - sentences:
+          - "vezmi <timer_duration> [z|z mého] <timer>"
+          - "vezmi <timer_duration> [z|z mého] <timer> na <timer_start>"
+          - "vezmi <timer_duration> [z|z mého] <timer> pro <timer_start>"
+          - "vezmi <timer_duration> [z|z mého] <timer> v {area}"
+          - "vezmi <timer_duration> [z|z mého] <timer> v oblasti <area>"
+          - "vezmi <timer_duration> [z|z mého] <timer> s názvem {timer_name:name}"
+          - "vezmi <timer_duration> [z|z mého] <timer> {timer_name:name}"
+          - "vezmi <timer_duration> [z|z mého] <timer> pojmenovaného {timer_name:name}"
+      # Sniž...
+      - sentences:
+          - "sniž [<timer>|můj <timer>] o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] o <timer_duration> v oblasti <area>"
+          - "sniž [<timer>|můj <timer>] na <timer_start> o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] pro <timer_start> o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] v {area} o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] v oblasti <area> o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] s názvem {timer_name:name} o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] {timer_name:name} o <timer_duration>"
+          - "sniž [<timer>|můj <timer>] pojmenovaný {timer_name:name} o <timer_duration>"

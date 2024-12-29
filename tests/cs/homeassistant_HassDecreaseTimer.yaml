@@ -1,0 +1,214 @@
+language: cs
+tests:
+  - sentences:
+      - "odeber 5 minut z časovače"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 5
+    response: "5 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 10 minut z mého časovače na 3 hodiny"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        start_hours: 3
+    response: "10 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 20 minut z mého časovače pro 2 hodiny"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 20
+        start_hours: 2
+    response: "20 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 15 minut z časovače v Kuchyni"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 15
+        area: "Kuchyni"
+    response: "15 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 25 minut z časovače v oblasti obýváku"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 25
+        area: "obýváku"
+    response: "25 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 10 minut z časovače s názvem vaření"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        name: "vaření"
+    response: "10 minut odebráno z časovače s názvem vaření"
+
+  - sentences:
+      - "odeber 30 minut z mého časovače pojmenovaného pečení"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 30
+        name: "pečení"
+    response: "30 minut odebráno z časovače s názvem pečení"
+
+  - sentences:
+      - "vezmi 5 minut z časovače"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 5
+    response: "5 minut odebráno z časovače"
+
+  - sentences:
+      - "vezmi 10 minut z mého časovače na 3 hodiny"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        start_hours: 3
+    response: "10 minut odebráno z časovače"
+
+  - sentences:
+      - "vezmi 20 minut z mého časovače pro 2 hodiny"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 20
+        start_hours: 2
+    response: "20 minut odebráno z časovače"
+
+  - sentences:
+      - "vezmi 15 minut z časovače v Kuchyni"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 15
+        area: "Kuchyni"
+    response: "15 minut odebráno z časovače"
+
+  - sentences:
+      - "vezmi 25 minut z časovače v oblasti obýváku"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 25
+        area: "obýváku"
+    response: "25 minut odebráno z časovače"
+
+  - sentences:
+      - "vezmi 10 minut z časovače s názvem vaření"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        name: "vaření"
+    response: "10 minut odebráno z časovače s názvem vaření"
+
+  - sentences:
+      - "vezmi 30 minut z mého časovače pojmenovaného pečení"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 30
+        name: "pečení"
+    response: "30 minut odebráno z časovače s názvem pečení"
+
+  - sentences:
+      - "sniž časovač o 5 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 5
+    response: "5 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž můj časovač na 3 hodiny o 10 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        start_hours: 3
+    response: "10 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž můj časovač pro 2 hodiny o 20 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 20
+        start_hours: 2
+    response: "20 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž časovač v Kuchyni o 15 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 15
+        area: "Kuchyni"
+    response: "15 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž můj časovač v oblasti obýváku o 25 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 25
+        area: "obýváku"
+    response: "25 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž můj časovač s názvem vaření o 10 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        name: "vaření"
+    response: "10 minut odebráno z časovače s názvem vaření"
+
+  - sentences:
+      - "sniž můj časovač pojmenovaný pečení o 30 minut"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 30
+        name: "pečení"
+    response: "30 minut odebráno z časovače s názvem pečení"
+
+  - sentences:
+      - "vezmi 15 minut z mého časovače"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 15
+    response: "15 minut odebráno z časovače"
+
+  - sentences:
+      - "sniž časovač o 10 minut v oblasti ložnice"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        area: "Ložnice"
+    response: "10 minut odebráno z časovače"
+
+  - sentences:
+      - "odeber 10 minut z časovače s názvem vaření v Kuchyni"
+    intent:
+      name: HassDecreaseTimer
+      slots:
+        minutes: 10
+        name: "vaření"
+        area: "Kuchyni"
+    response: "10 minut odebráno z časovače s názvem vaření"

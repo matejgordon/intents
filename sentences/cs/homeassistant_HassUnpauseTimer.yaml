@@ -1,0 +1,16 @@
+---
+language: "cs"
+intents:
+  HassUnpauseTimer:
+    data:
+      - sentences:
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>]"
+          - "(obnov|pokračuj) v [<timer>|[můj|mém] <timer>]"
+          - "(obnov|pokračuj) v [<timer>|[můj|mém] <timer>] na <timer_start>"
+          - "(obnov|pokračuj) v [<timer>|[můj|mém] <timer>] v {area}"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] na <timer_start>"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] pro <timer_start>"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] v {area}"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] <timer_named> <area>"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] <timer_named> {timer_name:name}"
+          - "(obnov|pokračuj) [<timer>|[můj|mém] <timer>] <timer_named> {timer_name:name}"
